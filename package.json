@@ -1,0 +1,29 @@
+{
+  "name": "ailen-component-library-test",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "./dist/index.js",
+  "scripts": {
+    "prebuild": "rm -rf ./dist",
+    "build": "cd ./node_modules/typescript/bin && tsc",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "test": "\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D)\u001b[B\u001b[B\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u001b[D\u001b[C"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native": "^0.66.4"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-native": "^0.66.11",
+    "typescript": "^4.5.4"
+  }
+}
