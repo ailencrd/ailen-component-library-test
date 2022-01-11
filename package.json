@@ -1,10 +1,11 @@
 {
   "name": "ailen-component-library-test",
-  "version": "1.0.0",
+  "version": "0.0.9",
   "description": "test",
   "main": "./dist/index.js",
   "scripts": {
     "prebuild": "rm -rf ./dist",
+    "prepare": "npm run build",
     "build": "cd ./node_modules/typescript/bin && tsc",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D)\u001b[B\u001b[B\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D"
@@ -16,11 +17,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-native": "^0.66.4"
+    "react-native": "^0.66.4",
+    "react-native-masked-text": "^1.13.0",
+    "react-native-safe-area-context": "^3.3.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@types/node": "^17.0.8",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@types/react-native": "^0.66.11",

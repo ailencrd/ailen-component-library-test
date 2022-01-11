@@ -1,3 +1,8 @@
 // @ts-nocheck
 import CustomButton from "./CustomButton/index";
-export { CustomButton }
+import Button from "./Button/index";
+
+export { 
+    CustomButton,
+    Button, 
+}
