@@ -1,5 +1,8 @@
 // @ts-nocheck
 import CustomButton from "./CustomButton/index";
-import Buttton from "./Button/index";
-export { CustomButton, Buttton, };
+// import Button from "./Button/index";
+import PlatformView from './PlatformView';
+export { CustomButton, 
+// Button,
+PlatformView };
 //# sourceMappingURL=index.js.map

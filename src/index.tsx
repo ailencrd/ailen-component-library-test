@@ -1,8 +1,10 @@
 // @ts-nocheck
 import CustomButton from "./CustomButton/index";
-import Button from "./Button/index";
+// import Button from "./Button/index";
+import PlatformView from './PlatformView'
 
-export { 
+export {
     CustomButton,
-    Button, 
+    // Button,
+    PlatformView
 }

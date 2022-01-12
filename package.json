@@ -1,6 +1,6 @@
 {
   "name": "ailen-component-library-test",
-  "version": "0.0.9",
+  "version": "0.0.14",
   "description": "test",
   "main": "./dist/index.js",
   "scripts": {
@@ -23,6 +23,8 @@
     "react-native": "^0.66.4",
     "react-native-masked-text": "^1.13.0",
     "react-native-safe-area-context": "^3.3.2",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
     "yup": "^0.32.11"
   },
   "devDependencies": {
