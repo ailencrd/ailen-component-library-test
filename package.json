@@ -1,6 +1,6 @@
 {
   "name": "ailen-component-library-test",
-  "version": "0.0.19",
+  "version": "0.0.21",
   "description": "test",
   "main": "./dist/index.js",
   "scripts": {
@@ -8,7 +8,6 @@
     "prepare": "npm run build",
     "build": "cd ./node_modules/typescript/bin && tsc",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "test": "\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D)\u001b[B\u001b[B\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D"
   },
   "repository": {
     "type": "git",
