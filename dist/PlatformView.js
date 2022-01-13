@@ -1,18 +1,16 @@
 import { __assign } from "tslib";
 import React from "react";
-import { Platform, StyleSheet, View, Text } from "react-native";
-// export const NativeComponent = () => (
-//     <Button title="I'm native" />
-// )
-// export const AndroidComponent = () => (
-//     <Button title="I'm Android" />
-// )
-// export const ExtraComponent = Platform.select({
-//         ios: () => require('AndroidComponent'),
-//         native: () => require('NativeComponent'),
-//         default: () => null,
-//     })();
+import { Platform, StyleSheet, View, Text, Button } from "react-native";
+export var NativeComponent = function () { return (React.createElement(Button, { title: "I'm native" })); };
+export var AndroidComponent = function () { return (React.createElement(Button, { title: "I'm Android", color: 'pink' })); };
+export var ExtraComponent = function () { return Platform.select({
+    ios: function () { return React.createElement(Button, { title: "I'm ios" }); },
+    android: function () { return React.createElement(AndroidComponent, null); },
+    native: function () { return React.createElement(NativeComponent, null); },
+    default: function () { return React.createElement(Button, { title: "I'm default" }); },
+})(); };
 var PlatformView = function () { return (React.createElement(View, { style: styles.container },
+    React.createElement(ExtraComponent, null),
     React.createElement(Text, null,
         "Sistema operativo: ",
         Platform.OS),
