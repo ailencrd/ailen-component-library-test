@@ -1,13 +1,13 @@
 {
   "name": "ailen-component-library-test",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "test",
   "main": "./dist/index.js",
   "scripts": {
     "prebuild": "rm -rf ./dist",
     "prepare": "npm run build",
     "build": "cd ./node_modules/typescript/bin && tsc",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "repository": {
     "type": "git",
