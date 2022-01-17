@@ -11,7 +11,6 @@ export const AndroidComponent = () => (
 const ConditionalComponent = () => Platform.select({
     ios: () => <Button title="I'm ios" color="#B4D0C7" />,
     android: () => <AndroidComponent />,
-    native: () => <NativeComponent />,
     default: () => <Button title="I'm default" />,
 })();
 

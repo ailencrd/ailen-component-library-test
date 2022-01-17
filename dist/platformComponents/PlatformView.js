@@ -5,7 +5,6 @@ export var AndroidComponent = function () { return (React.createElement(Button, 
 var ConditionalComponent = function () { return Platform.select({
     ios: function () { return React.createElement(Button, { title: "I'm ios", color: "#B4D0C7" }); },
     android: function () { return React.createElement(AndroidComponent, null); },
-    native: function () { return React.createElement(NativeComponent, null); },
     default: function () { return React.createElement(Button, { title: "I'm default" }); },
 })(); };
 export default ConditionalComponent;
