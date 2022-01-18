@@ -1,41 +1,40 @@
 import React, { ReactNode } from "react";
-import { TouchableOpacity } from "react-native";
-import { backgroundColor, border, spacing, useRestyle, ThemeProvider, createBox, createRestyleComponent, createVariant, VariantProps, createText } from "@shopify/restyle";
-import theme, { Theme } from '../styles/themes';
+import { TouchableOpacity, View, useColorScheme } from "react-native";
+import { useRestyle, createVariant, VariantProps, createText, createRestyleComponent, ThemeProvider } from "@shopify/restyle";
+import theme, { darkTheme, Theme } from '../styles';
 import { ButtonType } from "../types/components/Button";
 
-const Box = createBox<Theme>();
-const TextContainer = createText<Theme, TextProps>();
 
-const buttonTextVariants = createVariant<Theme, 'buttonTextVariants'>(
-  {
-    themeKey: 'buttonTextVariants',
-    defaults: {
-      color: 'white'
-    }
-  });
+const buttonTextVariants = createVariant<Theme, 'buttonTextVariants'>({ themeKey: 'buttonTextVariants', defaults: {} });
+const buttonContainerVariants = createVariant<Theme, 'buttonContainerVariants'>({ themeKey: 'buttonContainerVariants', defaults: {} });
 
 type TextProps = VariantProps<Theme, 'buttonTextVariants'> & { children: ReactNode };
-type ContainerProps = VariantProps<Theme, 'buttonVariants'> & React.ComponentProps<typeof Box>;
-const Container = createRestyleComponent<ContainerProps, Theme>(
-  [createVariant({ themeKey: 'buttonVariants' })],
-  Box,
-);
+type ContainerProps = VariantProps<Theme, 'buttonContainerVariants'>;
 
-const restyleFunctions = [spacing, backgroundColor, border];
+const restyleFunctions = [buttonContainerVariants];
 const TextRestyleFunctions = [buttonTextVariants];
 
-const Button = ({ children, disabled, onPress, variant, textVariant, ...rest }: ButtonType) => {
-  const ContainerProps = useRestyle(restyleFunctions, rest);
+const Box = createRestyleComponent<
+  ContainerProps & React.ComponentProps<typeof View>
+  , Theme>([buttonContainerVariants], View);
+
+  const TextContainer = createText<Theme, TextProps>();
+
+const Button = ({ children, disabled, onPress, variant }: ButtonType) => {
+  const ContainerProps = useRestyle(restyleFunctions, { variant });
   const TextProps = useRestyle(TextRestyleFunctions, { variant });
+
+  const isDarkMode = useColorScheme() === 'dark';
+
+
   return (
-    <ThemeProvider theme={theme}>
-      <TouchableOpacity onPress={onPress} disabled={disabled} style={{ minHeight: 300 }}>
-        <Container {...ContainerProps} variant="primary">
+    <ThemeProvider theme={isDarkMode ? darkTheme : theme}>
+      <TouchableOpacity onPress={onPress} disabled={disabled} {...ContainerProps}>
+        <Box {...ContainerProps}>
           <TextContainer {...TextProps}>
-            Holi acá estoy
+            {children}
           </TextContainer>
-        </Container>
+        </Box>
       </TouchableOpacity>
     </ThemeProvider>
   );

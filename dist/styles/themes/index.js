@@ -1,3 +1,4 @@
+import { __assign } from "tslib";
 import { createTheme } from '@shopify/restyle';
 import remToPixel from '../../helpers/styleAssets/sizesConverter';
 import colors from '../colors';
@@ -17,6 +18,7 @@ var theme = createTheme({
         // Creo que link no es necesario el button link, verificar
         buttonLinkFont: colors.blue600,
         buttonLinkDisabledFont: colors.grey600,
+        testColorGreen: colors.green
     },
     spacing: {
         s: 8,
@@ -28,33 +30,12 @@ var theme = createTheme({
         phone: 0,
         tablet: 768,
     },
-    textVariants: {
-        header: {
-            fontFamily: 'ShopifySans-Bold',
-            fontWeight: 'bold',
-            fontSize: 14,
-            lineHeight: 42.5,
-            color: 'white',
-        },
-        subheader: {
-            fontFamily: 'ShopifySans-SemiBold',
-            fontWeight: '600',
-            fontSize: 28,
-            lineHeight: 36,
-            color: 'black',
-        },
-        body: {
-            fontFamily: 'ShopifySans',
-            fontSize: 16,
-            lineHeight: 24,
-            color: 'black',
-        },
-    },
-    buttonVariants: {
+    buttonContainerVariants: {
         primary: {
             elevation: 1,
             borderRadius: remToPixel(0.25),
             backgroundColor: 'buttonPrimaryBg',
+            minHeight: 50,
         },
         secondary: {
             elevation: 1,
@@ -62,13 +43,16 @@ var theme = createTheme({
             backgroundColor: 'buttonSecondaryBg',
             borderWidth: 1,
             borderColor: 'buttonSecondaryBorder',
+            minHeight: 50,
         },
     },
     buttonTextVariants: {
         primary: {
+            fontSize: 20,
             textAlign: 'center',
             fontWeight: '500',
             color: 'buttonPrimaryFont',
+            backgroundColor: 'testColorGreen',
         },
         secondary: {
             textAlign: 'center',
@@ -77,5 +61,8 @@ var theme = createTheme({
         },
     }
 });
+export var darkTheme = __assign(__assign({}, theme), { colors: __assign(__assign({}, theme.colors), { white: colors.black, black: colors.white, buttonPrimaryBg: colors.green200, buttonPrimaryFont: colors.white, buttonSecondaryBg: colors.black, buttonSecondaryFont: colors.yellow200, buttonSecondaryBorder: colors.yellow200, 
+        // Creo que link no es necesario el button link, verificar
+        buttonLinkFont: colors.green200, buttonLinkDisabledFont: colors.grey600, testColorGreen: colors.green }) });
 export default theme;
 //# sourceMappingURL=index.js.map

@@ -1,7 +1,10 @@
-import { BackgroundColorProps, BorderProps, ResponsiveValue, SpacingProps } from "@shopify/restyle";
+import { BackgroundColorProps, BorderProps, SpacingProps, VariantProps } from "@shopify/restyle";
 import { ReactNode } from "react";
 import { NativeSyntheticEvent, NativeTouchEvent } from "react-native";
-import { Theme } from "../../styles/themes";
+import { Theme } from "../../styles";
+
+export type ContainerProps = VariantProps<Theme, 'buttonContainerVariants'>;
+export type TextProps = VariantProps<Theme, 'buttonTextVariants'> & { children: ReactNode };
 
 export type ButtonType =
     SpacingProps<Theme> &
@@ -11,8 +14,5 @@ export type ButtonType =
         children: ReactNode;
         disabled?: boolean;
         variant: 'primary' | 'secondary';
-        textVariant: ResponsiveValue<never, Theme>;
         onPress: (ev: NativeSyntheticEvent<NativeTouchEvent>) => void;
-        // buttonVariant: VariantProps<Theme, 'buttonVariants'>;
-        // textStyle: VariantProps<Theme, 'buttonTextVariants'>;
     };

@@ -1,8 +1,8 @@
+import { __assign } from "tslib";
 import { createTheme } from '@shopify/restyle';
-import remToPixel from '../../helpers/styleAssets/sizesConverter';
-import colors from '../colors';
-
-const theme = createTheme({
+import remToPixel from '../helpers/styleAssets/sizesConverter';
+import colors from './colors';
+var theme = createTheme({
     colors: {
         white: colors.white,
         black: colors.black,
@@ -10,17 +10,14 @@ const theme = createTheme({
         buttonPrimaryFont: colors.white,
         buttonPrimaryDisabledBg: colors.grey300,
         buttonPrimaryDisabledBorder: colors.grey300,
-
         buttonSecondaryBg: colors.white,
         buttonSecondaryFont: colors.blue800,
         buttonSecondaryBorder: colors.blue800,
         buttonSecondaryDisabledFont: colors.grey300,
         buttonSecondaryDisabledBorder: colors.grey300,
-
         // Creo que link no es necesario el button link, verificar
         buttonLinkFont: colors.blue600,
         buttonLinkDisabledFont: colors.grey600,
-
         testColorGreen: colors.green
     },
     spacing: {
@@ -63,29 +60,9 @@ const theme = createTheme({
             color: 'buttonSecondaryFont',
         },
     }
-})
-
-export const darkTheme: Theme = {
-    ...theme,
-    colors: {
-        ...theme.colors,
-        white: colors.black,
-        black: colors.white,
-        buttonPrimaryBg: colors.green200,
-        buttonPrimaryFont: colors.white,
-
-        buttonSecondaryBg: colors.black,
-        buttonSecondaryFont: colors.yellow200,
-        buttonSecondaryBorder: colors.yellow200,
-
+});
+export var darkTheme = __assign(__assign({}, theme), { colors: __assign(__assign({}, theme.colors), { white: colors.black, black: colors.white, buttonPrimaryBg: colors.green200, buttonPrimaryFont: colors.white, buttonSecondaryBg: colors.black, buttonSecondaryFont: colors.yellow200, buttonSecondaryBorder: colors.yellow200, 
         // Creo que link no es necesario el button link, verificar
-        buttonLinkFont: colors.green200,
-        buttonLinkDisabledFont: colors.grey600,
-
-        testColorGreen: colors.green
-    },
-};
-
-
-export type Theme = typeof theme;
+        buttonLinkFont: colors.green200, buttonLinkDisabledFont: colors.grey600, testColorGreen: colors.green }) });
 export default theme;
+//# sourceMappingURL=index.js.map

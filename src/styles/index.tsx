@@ -1,6 +1,6 @@
 import { createTheme } from '@shopify/restyle';
-import remToPixel from '../../helpers/styleAssets/sizesConverter';
-import colors from '../colors';
+import remToPixel from '../helpers/styleAssets/sizesConverter';
+import colors from './colors';
 
 const theme = createTheme({
     colors: {

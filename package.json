@@ -1,6 +1,6 @@
 {
   "name": "ailen-component-library-test",
-  "version": "0.0.54",
+  "version": "0.0.73",
   "description": "test",
   "main": "./dist/index.js",
   "scripts": {
