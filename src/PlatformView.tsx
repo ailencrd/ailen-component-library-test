@@ -8,7 +8,7 @@ const PlatformView = () => (
         <ConditionalComponent />
         <Text style={{fontSize: 12, color: '#ffffff'}}>Sistema operativo: {Platform.OS}</Text>
         <Text style={{fontSize: 12, color: '#ffffff'}}>Versión: {Platform.Version}</Text>
-        <Text style={{fontSize: 12, color: '#ffffff'}}>Modo: {JSON.stringify(Appearance.getColorScheme())}</Text>
+        <Text style={{fontSize: 16, color: '#ffffff'}}>Modo: {JSON.stringify(Appearance.getColorScheme())}</Text>
     </View>
 )
 

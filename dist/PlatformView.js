@@ -10,7 +10,7 @@ var PlatformView = function () { return (React.createElement(View, { style: styl
     React.createElement(Text, { style: { fontSize: 12, color: '#ffffff' } },
         "Versi\u00F3n: ",
         Platform.Version),
-    React.createElement(Text, { style: { fontSize: 12, color: '#ffffff' } },
+    React.createElement(Text, { style: { fontSize: 16, color: '#ffffff' } },
         "Modo: ",
         JSON.stringify(Appearance.getColorScheme())))); };
 export default PlatformView;

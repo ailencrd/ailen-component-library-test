@@ -16,15 +16,12 @@ const theme = createTheme({
         buttonSecondaryBorder: colors.blue800,
         buttonSecondaryDisabledFont: colors.grey300,
         buttonSecondaryDisabledBorder: colors.grey300,
-
-        // Creo que link no es necesario el button link, verificar
-        buttonLinkFont: colors.blue600,
-        buttonLinkDisabledFont: colors.grey600,
-
-        testColorGreen: colors.green
     },
     spacing: {
-        s: 8,
+        xxxs: 2,
+        xxs: 4,
+        xs: 8,
+        s: 12,
         m: 16,
         l: 24,
         xl: 40,
@@ -33,59 +30,48 @@ const theme = createTheme({
         phone: 0,
         tablet: 768,
     },
+    // typography: {
+    //     fontSize: {
+    //         xs: remToPixel(0.75),
+    //         s: remToPixel(0.875),
+    //         m: remToPixel(1),
+    //         l: remToPixel(1.25),
+    //         xl: remToPixel(1.5),        
+    //     }
+    // },
     buttonContainerVariants: {
         primary: {
             elevation: 1,
             borderRadius: remToPixel(0.25),
             backgroundColor: 'buttonPrimaryBg',
-            minHeight: 50,
+            padding: 's',
         },
         secondary: {
             elevation: 1,
             borderRadius: remToPixel(0.25),
-            backgroundColor: 'buttonSecondaryBg',
             borderWidth: 1,
+            backgroundColor: 'buttonSecondaryBg',
             borderColor: 'buttonSecondaryBorder',
-            minHeight: 50,
+            padding: 's',
         },
     },
     buttonTextVariants: {
         primary: {
-            fontSize: 20,
+            fontSize: remToPixel(0.875),
+            justifyContent: 'center',
             textAlign: 'center',
             fontWeight: '500',
             color: 'buttonPrimaryFont',
-            backgroundColor: 'testColorGreen',
         },
         secondary: {
+            fontSize: remToPixel(0.875),
+            justifyContent: 'center',
             textAlign: 'center',
             fontWeight: '500',
             color: 'buttonSecondaryFont',
         },
     }
 })
-
-export const darkTheme: Theme = {
-    ...theme,
-    colors: {
-        ...theme.colors,
-        white: colors.black,
-        black: colors.white,
-        buttonPrimaryBg: colors.green200,
-        buttonPrimaryFont: colors.white,
-
-        buttonSecondaryBg: colors.black,
-        buttonSecondaryFont: colors.yellow200,
-        buttonSecondaryBorder: colors.yellow200,
-
-        // Creo que link no es necesario el button link, verificar
-        buttonLinkFont: colors.green200,
-        buttonLinkDisabledFont: colors.grey600,
-
-        testColorGreen: colors.green
-    },
-};
-
 
 export type Theme = typeof theme;
 export default theme;
